@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Timeout</title>
+	</head>
+	<body>
+			<div>
+			<img src="download.jpg" id="im" height="150" width="250"><br>
+			<button onclick="g()" id="b1">Move Image</button>
+			<button onclick="h()" id="b2">Stop Image</button>
+		</div>
+
+		<script>
+			var l=0;var w;
+
+			function a()
+			{
+				var img = document.getElementById("im");
+				img.style.position="relative";
+				img.style.left=(l)+"px";
+				l+=10;
+			}
+			function g()
+			{
+				w=setInterval("a()",500);
+			}
+			function h()
+			{
+				clearInterval(w);
+			}
+		</script>
+	</body>
+</html>

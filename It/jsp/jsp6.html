@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  var y = document.forms["myForm"]["Mobile"].value;
+  var a = document.forms["myForm"]["gender"].value;
+  var b = document.forms["myForm"]["Interests"].value;
+
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+   if (y == "") {
+    alert("Number must be filled out");
+    return false;
+  }
+  if(a==""){
+  	alert("Gender needs to be selected");
+  	return false;
+  }
+  if(b==""){
+  	alert("Interest needs to be selected");
+  	return false;
+  }
+
+}
+</script>
+</head>
+<body>
+
+<form name="myForm"  onsubmit="return validateForm()" method="post">
+  Name: <input type="text" name="fname"><br><br>
+  Mobile: <input type="text"  name="Mobile" min="10" /><br><br>
+  Gender: Male<input type="radio" name="gender" value="male"/> Female<input type="radio" name="gender" value="female"/><br><br>
+  Interests: Cricket<input type="checkbox" id="crick" name="Interests"/> Football<input type="checkbox"  name="Interests" id="foot"/> Tennis<input type="checkbox" name="Interests" id="tennis"/><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

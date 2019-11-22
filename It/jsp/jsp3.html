@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practical</title>
+	<script type="text/javascript">
+		var arr = new Array();
+		var str = "";
+		function sort()
+		{
+			for (var i = 0; i < arr.length; i++) 
+			{
+				for (var j = i+1; j < arr.length; j++)
+				{
+					if (arr[i]>arr[j]) 
+					{
+						var t = arr[i];
+						arr[i] = arr[j];
+						arr[j] = t;
+					}
+				}
+			}
+		}
+		function outputString(out)
+		{
+			str += "<br>"+out;
+			for (var i = 0; i < arr.length; i++) {
+				str+=" "+arr[i]
+			}
+			str+= "<br>";
+		}
+		function getArr() 
+		{
+			var n=document.getElementById('num').value;
+			str = "";
+			for (var i = 0; i < n; i++) 
+			{
+				var t= prompt("Please Enter no. "+(i+1));
+				arr.push(t);
+			}
+			outputString("Array before sorting: ");
+			sort();
+			outputString("Array after sorting: ");
+			document.getElementById("output").innerHTML = str;
+		}
+	</script>
+</head>
+<body>
+	<form>
+		Enter no. of elements: 
+		<input type="name" id="num"><br>
+		<input type="button" value="submit" onclick="getArr()">
+	</form>
+	<p id="output">Output comes here</p>
+</body>
+</html>

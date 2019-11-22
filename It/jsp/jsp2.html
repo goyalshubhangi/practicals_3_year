@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Static Password </title>
+	</head>
+	<body>
+	<form>
+		Name:     <input  type="text" id="1"/></br>
+		Password: <input  type="password" id="2"/></br>
+		<input type="button" value="submit " onClick="check()"/>
+	</form>
+
+	<script>
+		function check()
+		{
+			var name="Tutorialsduniya";
+			var pass="td1234";
+			var name1=document.getElementById(1).value;
+			var pass2=document.getElementById(2).value;
+			if(name==name1 && pass==pass2)
+			{
+				alert("login successful");
+			}
+			else
+				alert("wrong credentials");
+		}
+	</script>
+	</body>
+</html>

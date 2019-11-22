@@ -1,0 +1,61 @@
+  <!DOCTYPE html>
+<html>
+<head>
+	<title>Question 4</title>
+	<script type="text/javascript">
+		var arr = new Array();
+		var t = 0;
+		var maxSize = 10;
+		function show()
+		{
+			var str = "";
+			if (arr.length==0)
+				str= "No Elements in Stack" ;
+			else
+			{
+				for(i=0; i<arr.length; i++)
+				{
+					str += " "+arr[i];
+				}
+			}
+			document.getElementById("output").innerHTML = str;
+		}
+		function push() 
+		{
+			var a=document.getElementById("num");
+			var b=document.getElementById('num').value;
+			if(t<maxSize)
+			{
+				arr.push(b);
+				t++;
+			}
+			else
+				alert("Stack overflow");
+			a.value=" ";
+			show();
+		}
+		function pop()
+		{
+			if(t>0)
+			{
+				arr.pop();
+				t--;
+			}
+			else
+				alert("underflow");
+			show();
+		}
+	</script>
+</head>
+<body>
+	<form>
+		Enter no: <input type="text" id="num"><br>
+		<input type="button" value=" push " onclick="push()">
+		<input type="button" value=" pop " onclick="pop()">
+	</form>
+
+	<p id="output"></p>
+	<script type="text/javascript">show();</script>
+</body>
+</html>
+
